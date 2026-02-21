@@ -20,6 +20,19 @@ if not SUPABASE_URL or not SUPABASE_KEY:
 supabase: Client = create_client(SUPABASE_URL or "", SUPABASE_KEY or "")
 
 
+# ── Home Route ───────────────────────────────────────────────
+@app.route("/", methods=["GET"])
+def index():
+    return jsonify({
+        "message": "Quantum Sandbox API is LIVE 🚀",
+        "endpoints": {
+            "get_messages": "/api/messages",
+            "post_message": "/api/messages",
+            "health_check": "/api/health"
+        }
+    }), 200
+
+
 # ── GET /api/messages ────────────────────────────────────────
 @app.route("/api/messages", methods=["GET"])
 def get_messages():

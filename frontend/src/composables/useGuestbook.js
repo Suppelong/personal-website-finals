@@ -4,7 +4,7 @@
  */
 import { ref } from 'vue'
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+const API = import.meta.env.VITE_API_URL || 'https://personal-website-finals-1.onrender.com'
 
 export function useGuestbook() {
     const messages = ref([])
